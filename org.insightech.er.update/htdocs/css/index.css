@@ -1,0 +1,11 @@
+@CHARSET "UTF-8";
+
+body {
+    font-family: ’ヒラギノ角ゴ Pro W3′, ‘Hiragino Kaku Gothic Pro’, Meiryo, arial,
+		narrow;
+	font-size: 1.0em;
+}
+
+a {
+	font-size: 0.8em;
+}

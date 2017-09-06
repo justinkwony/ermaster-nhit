@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SampleExtention
+Bundle-SymbolicName: org.insightech.er.extentions.sample;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: org.insightech.er.extentions.sample.SampleExtentionActivator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.gef;bundle-version="3.9.0",
+ org.insightech.er;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy

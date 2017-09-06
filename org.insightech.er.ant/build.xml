@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<project name="org.insightech.framework" default="deploy" basedir=".">
+	<property name="deploy.file" location="../org.insightech.er/lib/ermaster_ant.jar" />
+
+	<target name="deploy">
+		<jar destfile="${deploy.file}">
+			<fileset dir="bin">
+			</fileset>
+		</jar>
+	</target>
+	
+</project>

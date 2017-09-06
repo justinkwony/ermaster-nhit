@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="report_excel">
+
+	<target name="ddl">
+		<ermaster.ddl diagramFile="c:\work\sample\sample_category.erm" 
+			outputFile="ddl.sql" encoding="UTF-8" />
+	</target>
+
+	<target name="image">
+		<ermaster.image diagramfile="c:\work\sample\sample_category.erm" 
+			outputfile="c:\work\test.png" withCategory="true" />
+	</target>
+
+	<target name="report_html">
+		<ermaster.reportHtml diagramFile="c:\work\sample\sample_category.erm" />
+	</target>
+
+	<target name="report_excel">
+		<ermaster.reportExcel diagramfile="c:\work\sample\sample_category.erm" 
+			outputfile="c:\work\test.xls" 
+			template="default_en" 
+			outputimage="true" 
+			uselogicalnameassheetname="true" />
+	</target>
+
+	<target name="testdata">
+		<ermaster.testdata diagramFile="newfile.erm" outputDir="." format="0">
+			<testdata name="init/xxx" />
+			<testdata name="result/yyy" />
+		</ermaster.testdata>
+	</target>
+
+</project>
+

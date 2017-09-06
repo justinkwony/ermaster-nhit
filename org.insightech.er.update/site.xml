@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description name="ERMaster-NHIT" url="http://justinkwony.github.io/ermaster-nhit/update-site">
+      update-site at github.io
+   </description>
+   <feature url="features/org.insightech.er.feature_1.0.0.v20150619-0219.jar" id="org.insightech.er.feature" version="1.0.0.v20150619-0219">
+      <category name="ermaster"/>
+   </feature>
+   <category-def name="ermaster" label="ERMaster-NHIT"/>
+</site>
