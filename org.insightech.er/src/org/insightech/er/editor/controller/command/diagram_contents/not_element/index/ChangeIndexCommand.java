@@ -39,6 +39,7 @@ public class ChangeIndexCommand extends AbstractCommand {
 	protected void doExecute() {
 		this.table.setIndexes(this.newIndexList);
 		this.indexSet.refresh();
+		this.table.getDiagram().refreshOutline(); //justinkwony, Outline sub-node refresh
 	}
 
 	/**
