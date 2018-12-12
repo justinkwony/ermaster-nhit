@@ -47,7 +47,7 @@ public class TiberoTableImportManager extends ImportFromDBManagerEclipseBase {
 
 		try {
 			stmt = this.con
-					.prepareStatement("SELECT OWNER, TABLE_NAME, COLUMN_NAME, COMMENTS FROM SYS.ALL_COL_COMMENTS WHERE COMMENTS IS NOT NULL");
+					.prepareStatement("SELECT OWNER, TABLE_NAME, COLUMN_NAME, COMMENTS FROM SYSCAT.ALL_COL_COMMENTS WHERE COMMENTS IS NOT NULL");
 			rs = stmt.executeQuery();
 
 			while (rs.next()) {
@@ -87,7 +87,7 @@ public class TiberoTableImportManager extends ImportFromDBManagerEclipseBase {
 
 		try {
 			stmt = this.con
-					.prepareStatement("SELECT OWNER, TABLE_NAME, COMMENTS FROM SYS.ALL_TAB_COMMENTS WHERE COMMENTS IS NOT NULL");
+					.prepareStatement("SELECT OWNER, TABLE_NAME, COMMENTS FROM SYSCAT.ALL_TAB_COMMENTS WHERE COMMENTS IS NOT NULL");
 			rs = stmt.executeQuery();
 
 			while (rs.next()) {
@@ -134,13 +134,13 @@ public class TiberoTableImportManager extends ImportFromDBManagerEclipseBase {
 		try {
 			if (schema != null) {
 				stmt = this.con
-						.prepareStatement("SELECT * FROM SYS.ALL_SEQUENCES WHERE SEQUENCE_OWNER = ? AND SEQUENCE_NAME = ?");
+						.prepareStatement("SELECT * FROM SYSCAT.ALL_SEQUENCES WHERE SEQUENCE_OWNER = ? AND SEQUENCE_NAME = ?");
 				stmt.setString(1, schema);
 				stmt.setString(2, sequenceName);
 
 			} else {
 				stmt = this.con
-						.prepareStatement("SELECT * FROM SYS.ALL_SEQUENCES WHERE SEQUENCE_NAME = ?");
+						.prepareStatement("SELECT * FROM SYSCAT.ALL_SEQUENCES WHERE SEQUENCE_NAME = ?");
 				stmt.setString(1, sequenceName);
 
 			}
@@ -197,13 +197,13 @@ public class TiberoTableImportManager extends ImportFromDBManagerEclipseBase {
 		try {
 			if (schema != null) {
 				stmt = this.con
-						.prepareStatement("SELECT * FROM SYS.ALL_TRIGGERS WHERE OWNER = ? AND TRIGGER_NAME = ?");
+						.prepareStatement("SELECT * FROM SYSCAT.ALL_TRIGGERS WHERE OWNER = ? AND TRIGGER_NAME = ?");
 				stmt.setString(1, schema);
 				stmt.setString(2, name);
 
 			} else {
 				stmt = this.con
-						.prepareStatement("SELECT * FROM SYS.ALL_TRIGGERS WHERE TRIGGER_NAME = ?");
+						.prepareStatement("SELECT * FROM SYSCAT.ALL_TRIGGERS WHERE TRIGGER_NAME = ?");
 				stmt.setString(1, name);
 
 			}
@@ -215,8 +215,8 @@ public class TiberoTableImportManager extends ImportFromDBManagerEclipseBase {
 
 				trigger.setName(name);
 				trigger.setSchema(schema);
-				trigger.setDescription(rs.getString("DESCRIPTION"));
-				trigger.setSql(rs.getString("TRIGGER_BODY"));
+//				trigger.setDescription(rs.getString("DESCRIPTION"));
+//				trigger.setSql(rs.getString("TRIGGER_BODY"));
 
 				return trigger;
 			}
