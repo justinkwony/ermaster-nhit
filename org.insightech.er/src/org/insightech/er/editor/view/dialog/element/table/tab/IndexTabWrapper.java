@@ -167,11 +167,10 @@ public class IndexTabWrapper extends ValidatableTabWrapper {
 		TableItem radioTableItem = new TableItem(this.indexTable, SWT.NONE);
 
 		for (int i = 0; i < indexes.size(); i++) {
-			TableColumn tableColumn = CompositeFactory.createTableColumn(
+			TableColumn tableColumn = CompositeFactory.createTableColumn(this.indexTable, indexes.get(i).getName(), -1, SWT.CENTER);
 //					this.indexTable, "Index" + (i + 1), -1, SWT.CENTER);
-					this.indexTable, indexes.get(i).getName(), -1, SWT.CENTER);
-			tableColumn.setToolTipText(indexes.get(i).getName());
 //			tableColumn.setResizable(false);
+			tableColumn.setToolTipText(indexes.get(i).getName());
 			tableColumn.setResizable(true);
 
 			TableEditor editor = new TableEditor(this.indexTable);
